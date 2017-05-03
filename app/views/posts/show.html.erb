@@ -1,0 +1,12 @@
+<b><h1>
+<%= @post.title %>
+</h1></b>
+</br>
+<%= @post.content %>
+
+<br>
+<br>
+
+<%= link_to "Edit", edit_post_path %>
+<%= link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %>
+<%= commontator_thread(@post) %>

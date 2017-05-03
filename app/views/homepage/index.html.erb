@@ -1,0 +1,125 @@
+<html>
+ <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+ .bgimg-1 {
+   background-image: url('http://mnmlst.com.au/wp-content/uploads/2016/10/mnmlst.jpg');
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   min-height: 100%;
+ }
+ .w3-wide {
+          letter-spacing: 10px;
+          }
+ .w3-hover-opacity {
+          cursor: pointer;
+          }
+  .w3-display-container{
+          position:relative
+           }
+  .w3-opacity-min{
+            opacity:0.75;
+            -webkit-backface-visibility:hidden
+            }
+  .w3-display-middle{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            -ms-transform:translate(-50%,-50%)
+          }
+    .w3-center{
+            text-align:center!important
+            display:inline-block;
+            width:auto
+             }
+    .w3-padding-xlarge{padding:16px 32px!important}
+    .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
+    .w3-xlarge{font-size:24px!important}
+    .w3-wide{font-family:"Segoe UI",Arial,sans-serif}
+    .w3-animate-opacity{-webkit-animation:opac 0.8s;animation:opac 0.8s}
+@-webkit-keyframes opac{from{opacity:0} to{opacity:1}}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+.login {
+  position:absolute;
+  top:65%;
+  left:58%;
+  transform:translate(-65%,-65%);
+  -ms-transform:translate(-65%,-65%);
+	background-color:#f0bebb;
+	border-radius:5px;
+  letter-spacing: 10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: "Lato", sans-serif;
+	font-size:15px;
+	padding:5px 30px;
+	text-decoration:none;
+
+}
+.login:hover {
+	background-color:#fa7171;
+}
+
+
+
+.signup {
+  position:absolute;
+  top:65%;
+  left:43%;
+  transform:translate(-45%,-65%);
+  -ms-transform:translate(-45%,-65%);
+	background-color:#f0bebb;
+	border-radius:5px;
+  letter-spacing: 10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: "Lato", sans-serif;
+	font-size:15px;
+	padding:5px 30px;
+	text-decoration:none;
+}
+.signup:hover {
+	background-color:#fa7171;
+}
+
+
+</style>
+<body>
+<div class="bgimg-1 w3-display-container w3-opacity-min " >
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">CREATIONS</span>
+  </div>
+</div>
+
+<header>
+	<nav class="cd-stretchy-nav add-content">
+		<a class="cd-nav-trigger" href="#0">
+			Menu
+			<span aria-hidden="true"></span>
+		</a>
+
+		<ul>
+    <li>  <%= link_to "NEW", edit_user_registration_path, :class=> "span" %></li>
+  <li>  <%= link_to " ALL", destroy_user_session_path, method: :delete, :class=> "span" %></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
+</header>
+
+<% if user_signed_in? %>
+<%= link_to "ACCOUNT", edit_user_registration_path, :class=> "signup"%>
+<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class=> "login" %>
+
+<% end %>
+
+</body>

@@ -1,0 +1,36 @@
+<style>
+h1
+{
+  font-family: "Century Gothic";
+
+}
+.subtext
+{
+  position:absolute;
+  top:6%;
+  left:50%;
+  transform:translate(-50%,-6%);
+  -ms-transform:translate(-50%,-6%);
+  font-family: "Century Gothic";
+}
+#list2 { width:1000px; }
+#list2 ul { font-style:italic; font-family:Georgia, Times, serif; font-size:20px; culor:#bfe1f1;  }
+#list2 ul li { }
+#list2 ul li p { padding:8px; font-style:normal; font-family:Arial; font-size:13px; culor:#eee; border-left: 1px sulid #999; }
+#list2 ul li p em {  }
+</style>
+<body>
+<h1 align="center">Inspire Me</h1>
+<br>
+<div class="subtext"> <p align=center>find what inspires you </p> </div>
+
+
+<% @entriesArray.each do |entry| %>
+<div id="list2">
+   <ul>
+      <li><p><em></p><%= entry.title %></li>
+   </ul>
+</div>
+
+<% end %>
+</body>

@@ -1,0 +1,2 @@
+module ScrapertestHelper
+end

@@ -1,0 +1,16 @@
+
+<% @post.each do |post|%>
+
+ <b><%= post.title %></b>
+ <br>
+
+<%= link_to "show", post_path(post.id) %>
+<%= commontator_thread(post) %>
+
+
+<br>
+<br>
+
+
+
+<% end %>
